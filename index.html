@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Car {
+        color = "red";
+        speed = 90;
+      }
+      let myCar = new Car();
+      console.log(myCar);
+      let yourCar = new Car();
+      yourCar.color = "green";
+      console.log(yourCar.color);
+
+      class Wallet {
+        constructor(id, p) {
+          this.price = p;
+          this.userId = id;
+        }
+
+        info() {
+          console.log(`your userid=${this.userId} price= ${this.price} `);
+        }
+        charge(p) {
+          // this.price=this.price+p;
+          this.price += p;
+        }
+        buy(p) {
+          // this.price=this.price-p;
+          this.price -= p;
+        }
+      }
+      let v1 = new Wallet(1, 10000);
+      let v2 = new Wallet(2, 20000);
+      v2.buy(2000);
+      v1.charge(5000);
+      v1.info();
+      v2.info();
+    </script>
+  </body>
+</html>
