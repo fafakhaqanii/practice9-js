@@ -4,8 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      #myDiv1,
+      #myDiv2 {
+        background-color: rgb(5, 5, 44);
+        color: white;
+        padding: 50px;
+      }
+
+      #myP1,
+      #myP2 {
+        background-color: lightblue;
+        font-size: 20px;
+        border: 1px solid;
+        color: black;
+        padding: 20px;
+      }
+    </style>
   </head>
   <body>
+    <div id="myDiv1">
+      <h2>Bubbling:</h2>
+      <p id="myP1">Click me!</p>
+    </div>
+    <br />
+
     <script>
       class Car {
         color = "red";
@@ -51,6 +74,23 @@
       console.log(MyMath.abs(-5));
       console.log(Math.sqrt(25));
       console.log(Math.pow(2, 10));
+      console.log("Bubbling");
+      document.getElementById("myP1").addEventListener(
+        "click",
+        function () {
+          alert("You clicked the white element!");
+          event.stopPropagation();
+        },
+        false
+      );
+
+      document.getElementById("myDiv1").addEventListener(
+        "click",
+        function () {
+          alert("You clicked the orange element!");
+        },
+        false
+      );
       console.log("*****");
 
       Math.random();
